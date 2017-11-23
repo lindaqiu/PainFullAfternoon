@@ -13,6 +13,7 @@ public class ItemParserTest {
     private String rawSingleItem =    "naMe:Milk;price:3.23;type:Food;expiration:1/25/2016##";
 
     private String rawSingleItemIrregularSeperatorSample = "naMe:MiLK;price:3.23;type:Food^expiration:1/11/2016##";
+    //instead of semi-colon separating keys its a carrot
 
     private String rawBrokenSingleItem =    "naMe:Milk;price:3.23;type:Food;expiration:1/25/2016##";
 
@@ -47,14 +48,14 @@ public class ItemParserTest {
     }
 
     @Test
-    public void findKeyValuePairsInRawItemDataTest(){
+    public void findKeyValuePairsInRawItemDataTest()throws ItemParseException{
         Integer expected = 4;
         Integer actual = itemParser.findKeyValuePairsInRawItemData(rawSingleItem).size();
         assertEquals(expected, actual);
     }
 
     @Test
-    public void findKeyValuePairsInRawItemDataTestIrregular(){
+    public void findKeyValuePairsInRawItemDataTestIrregular()throws ItemParseException{
         Integer expected = 4;
         Integer actual = itemParser.findKeyValuePairsInRawItemData(rawSingleItemIrregularSeperatorSample).size();
         assertEquals(expected, actual);
