@@ -3,6 +3,8 @@ package io.zipcoder;
 import org.apache.commons.io.IOUtils;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 
 public class Main {
@@ -15,15 +17,19 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
         String output = (new Main()).readRawDataToString();
-        System.out.println(output);
-//        ItemParser itemParserByPound = new ItemParser();
-//        ArrayList<String> outputSeparatedByPound = itemParserByPound.parseRawDataIntoStringArray(output);
+
+
+        ItemParser item = new ItemParser();
+//        ArrayList<String> outputParse = item.parseStringIntoItem(output);
 //
-//        for(String itemString: outputSeparatedByPound){
+//        for(String itemString: outputParse){
 //           System.out.println(itemString);
 //       }
-////also removes the pound symbol
 
         // TODO: parse the data in output into items, and display to console.
+
+
+
+
     }
 }
